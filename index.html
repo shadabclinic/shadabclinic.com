@@ -1,78 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SHADAB HEART & LUNG CARE CENTER</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHADAB HEART & LUNG CARE CENTER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color, #fff);
+            color: var(--text-color, #000);
+        }
+        header, footer {
+            background-color: #003366;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #006699;
+            text-align: center;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        section {
+            padding: 2rem;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>SHADAB HEART & LUNG CARE CENTER</h1>
-    <p>Gopalganj, Bihar</p>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#appointment">Appointment</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section id="home" class="section">
-    <h2>Welcome to Our Clinic</h2>
-    <p>Providing expert care in Cardiology and Pulmonology with compassion and dedication.</p>
-  </section>
-
-  <section id="about" class="section">
-    <h2>About Us</h2>
-    <div class="doctors">
-      <div class="doctor">
-        <img src="images/doctor1.jpg" alt="Doctor" />
-        <h3>Dr. Shadab</h3>
-        <p>Interventional Cardiologist</p>
-      </div>
-      <div class="doctor">
-        <img src="images/doctor2.jpg" alt="Doctor" />
-        <h3>Dr. Shadab's Wife</h3>
-        <p>Pulmonologist</p>
-      </div>
+    <div class="theme-toggle">
+        <button onclick="toggleTheme()">Toggle Theme</button>
     </div>
-  </section>
 
-  <section id="services" class="section">
-    <h2>Our Services</h2>
-    <ul>
-      <li>OPD</li>
-      <li>ECG</li>
-      <li>Echo</li>
-      <li>TMT</li>
-      <li>Holter</li>
-      <li>X-ray</li>
-    </ul>
-  </section>
+    <header>
+        <h1>SHADAB HEART & LUNG CARE CENTER</h1>
+        <p>Thawe Road, Opposite Ghosh & Sinha Petrol Pump,</p>
+	<p>Near Gopalganj, Bus Stand, Gopalganj, Bihar-841428</p>
+    </header>
 
-  <section id="appointment" class="section">
-    <h2>Book an Appointment</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="tel" placeholder="Phone Number" required />
-      <input type="date" required />
-      <input type="time" required />
-      <textarea placeholder="Reason for Visit"></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#login">Login</a>
+    </nav>
 
-  <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <p><strong>Address:</strong> Gopalganj, Bihar</p>
-    <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
-    <p><strong>Email:</strong> contact@shadabclinic.com</p>
-  </section>
+    <section id="home">
+        <h2>Welcome to Our Clinic</h2>
+        <p>We provide expert care in cardiology and pulmonology with advanced diagnostic services.</p>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 SHADAB HEART & LUNG CARE CENTER. All rights reserved.</p>
-  </footer>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Dr. Shadab Ahmad (Interventional Cardiologist) and Dr. Naila Ambrin (Pulmonologist) offer specialized care with ECG, Echo, TMT, Holter, and PFT services.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+	    <li>Consultation</li>
+	    <li>ECG</li>
+            <li>Echo</li>
+            <li>TMT</li>
+            <li>Holter</li>
+	    <li>PFT</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: shadab15.a@gmail.com</p>
+    </section>
+
+    <section id="login">
+        <h2>Staff Login</h2>
+        <form>
+            <label>Username:</label><br>
+            <input type="text" name="username"><br>
+            <label>Password:</label><br>
+            <input type="password" name="password"><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SHADAB HEART & LUNG CARE CENTER</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            if (document.body.style.getPropertyValue('--bg-color') === '#000') {
+                document.body.style.setProperty('--bg-color', '#fff');
+                document.body.style.setProperty('--text-color', '#000');
+            } else {
+                document.body.style.setProperty('--bg-color', '#000');
+                document.body.style.setProperty('--text-color', '#fff');
+            }
+        }
+    </script>
 </body>
 </html>
