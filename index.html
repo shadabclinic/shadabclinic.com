@@ -1,11 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Shadab Clinic</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SHADAB HEART & LUNG CARE CENTER</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Welcome to Shadab Heart & Lung Care Center</h1>
-  <p>We care for your heart and lungs at Gopalganj, Bihar.</p>
+  <header>
+    <h1>SHADAB HEART & LUNG CARE CENTER</h1>
+    <p>Gopalganj, Bihar</p>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#appointment">Appointment</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="section">
+    <h2>Welcome to Our Clinic</h2>
+    <p>Providing expert care in Cardiology and Pulmonology with compassion and dedication.</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <div class="doctors">
+      <div class="doctor">
+        <img src="images/doctor1.jpg" alt="Doctor" />
+        <h3>Dr. Shadab</h3>
+        <p>Interventional Cardiologist</p>
+      </div>
+      <div class="doctor">
+        <img src="images/doctor2.jpg" alt="Doctor" />
+        <h3>Dr. Shadab's Wife</h3>
+        <p>Pulmonologist</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Our Services</h2>
+    <ul>
+      <li>OPD</li>
+      <li>ECG</li>
+      <li>Echo</li>
+      <li>TMT</li>
+      <li>Holter</li>
+      <li>X-ray</li>
+    </ul>
+  </section>
+
+  <section id="appointment" class="section">
+    <h2>Book an Appointment</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <input type="date" required />
+      <input type="time" required />
+      <textarea placeholder="Reason for Visit"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> Gopalganj, Bihar</p>
+    <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+    <p><strong>Email:</strong> contact@shadabclinic.com</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SHADAB HEART & LUNG CARE CENTER. All rights reserved.</p>
+  </footer>
 </body>
 </html>
