@@ -1,131 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHADAB HEART & LUNG CARE CENTER</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color, #fff);
-            color: var(--text-color, #000);
-        }
-        header, footer {
-            background-color: #003366;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav {
-            background-color: #006699;
-            text-align: center;
-            padding: 0.5rem;
-        }
-        nav a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-        section {
-            padding: 2rem;
-        }
-        .theme-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SHADAB HEART & LUNG CARE CENTER</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color, #fff);
+      color: var(--text-color, #000);
+    }
+    header, footer {
+      background-color: #003366;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #006699;
+      text-align: center;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    section {
+      padding: 2rem;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+    .doctors {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .doctor-card {
+      text-align: center;
+      max-width: 350px;
+    }
+    .doctor-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+    .background-section {
+      background: url('images/#doctor_shadab.jpg') center center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .background-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 50px 20px;
+    }
+    services {
+    background-color: #f9f9f9;
+    padding: 3rem 2rem;
+    border-top: 2px solid #006699;
+    border-bottom: 2px solid #006699;
+  }
+
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .service-card {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 160px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: scale(1.05);
+  }
+
+  .service-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+
+  .service-card p {
+    margin: 0;
+    font-weight: bold;
+    color: #003366;
+  }
+  img {
+    height: 80px;
+    object-fit: contain;
+  }
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    14% {
+      transform: scale(1.3);
+    }
+    28% {
+      transform: scale(1);
+    }
+    42% {
+      transform: scale(1.3);
+    }
+    70% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .heartbeat-logo {
+    animation: heartbeat 2s infinite;
+    transition: transform 0.3s ease-in-out;
+  }
+  </style>
 </head>
 <body>
-    <div class="theme-toggle">
-        <button onclick="toggleTheme()">Toggle Theme</button>
+
+  <div class="theme-toggle">
+    <button onclick="toggleTheme()">Toggle Theme</button>
+  </div>
+
+  <header style="position: relative; background-color: #003366; color: white; padding: 1rem; text-align: center;">
+    <img src="images/logo.png" alt="Clinic Logo"
+         class="heartbeat-logo"
+         style="position: absolute; top: 20px; right: 100px; height: 120px; max-width: 140px;" />
+    <div>
+      <h1>SHADAB HEART & LUNG CARE CENTER</h1>
+      <p>Thawe Road, Opposite Ghosh & Sinha Petrol Pump,</p>
+      <p>Near Gopalganj Bus Stand, Gopalganj, Bihar - 841428</p>
     </div>
+  </header>
 
-    <header>
-        <h1>SHADAB HEART & LUNG CARE CENTER</h1>
-        <p>Thawe Road, Opposite Ghosh & Sinha Petrol Pump,</p>
-	<p>Near Gopalganj Bus Stand, Gopalganj, Bihar-841428</p>
-    </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#doctors">Our Doctors</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="#login">Login</a>
+  </nav>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        <a href="#login">Login</a>
-    </nav>
+  <section id="home" class="background-section">
+    <div class="background-overlay">
+      <h2>Welcome to Our Clinic</h2>
+      <p>We provide expert care in cardiology and pulmonology with advanced diagnostic services.</p>
+    </div>
+  </section>
 
-    <section id="home">
-        <h2>Welcome to Our Clinic</h2>
-        <p>We provide expert care in cardiology and pulmonology with advanced diagnostic services.</p>
-    </section>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>SHADAB HEART & LUNG CARE CENTER is a dedicated cardiology and pulmonology clinic located in Gopalganj, Bihar. Led by experienced specialists, we offer comprehensive care for heart and lung conditions with services like OPD consultation, ECG, Echocardiography, TMT (Treadmill Test), Holter Monitoring and PFT.
+Our mission is to provide accurate diagnosis, effective treatment, and compassionate care in a modern and patient-friendly environment. We are committed to improving the health and well-being of our community with personalized attention and the latest medical technologies.
+Visit us for expert cardiac and respiratory care.</p>
+  </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>SHADAB HEART & LUNG CARE CENTER is a dedicated cardiology and pulmonology clinic located in Gopalganj, Bihar. Led by experienced specialists, we offer comprehensive care for heart and lung conditions with services like OPD consultation, ECG, Echocardiography, TMT (Treadmill Test), Holter Monitoring and PFT. Our mission is to provide accurate diagnosis, effective treatment, and compassionate care in a modern and patient-friendly environment. We are committed to improving the health and well-being of our community with personalized attention and the latest medical technologies. Visit us for expert cardiac and respiratory care.</p>
-    </section>
+  <section id="doctors">
+    <h2>Our Doctors</h2>
+    <div class="doctors">
+      <div class="doctor-card">
+        <img src="images/doctor_shadab.jpg" alt="Dr. Shadab Ahmad">
+        <h3>Dr. Shadab Ahmad</h3>
+	<p>(Interventional Cardiologist)</p>
+        <p>MBBS, MD (General Medicine)-AMU, Aligarh</p>
+	<p>DM (Cardiology)- SKIMS, Srinagar</p>
+        <p>Ex-Consultant Cardiologist- Asian Dwarkadas Jalan Superspeciality Hospital, Dhanbad</p>
+      </div>
+      <div class="doctor-card">
+        <img src="images/doctor_naila.jpg" alt="Dr. Naila Ambrin">
+        <h3>Dr. Naila Ambrin</h3>
+        <p>(Pulmonologist)</p>
+        <p>MBBS, MD (TB & Chest Diseases)- AMU, Aligarh</p>
+        <p>Ex-Consultant Pulmonologist- Asian Dwarkadas Jalan Superspeciality Hospital, Dhanbad</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-	    <li>Consultation</li>
-	    <li>ECG</li>
-            <li>Echo</li>
-            <li>TMT</li>
-            <li>Holter</li>
-	    <li>PFT</li>
-        </ul>
-    </section>
+  <section id="services">
+   <h2 style="text-align: center; margin-bottom: 2rem;">Our Services</h2>
+   <div class="services-container">
+     <div class="service-card">
+      <img src="images/consultation.png" alt="Consultation">
+      <p>Consultation</p>
+     </div>
+     <div class="service-card">
+      <img src="images/ecg.png" alt="ECG">
+      <p>ECG</p>
+    </div>
+    <div class="service-card">
+      <img src="images/echo.png" alt="Echo">
+      <p>Echo</p>
+    </div>
+    <div class="service-card">
+      <img src="images/tmt.png" alt="TMT">
+      <p>TMT</p>
+    </div>
+    <div class="service-card">
+      <img src="images/holter.png" alt="Holter">
+      <p>Holter</p>
+    </div>
+    <div class="service-card">
+      <img src="images/pft.png" alt="PFT">
+      <p>PFT</p>
+    </div>
+  </div>
+</section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: shadab15.a@gmail.com</p>
-    </section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: shadab15.a@gmail.com</p>
+  </section>
 
-    <section id="login">
-        <h2>Staff Login</h2>
-        <form>
-            <label>Username:</label><br>
-            <input type="text" name="username"><br>
-            <label>Password:</label><br>
-            <input type="password" name="password"><br><br>
-            <button type="submit">Login</button>
-        </form>
-    </section>
+  <section id="login">
+    <h2>Staff Login</h2>
+    <form>
+      <label>Username:</label><br>
+      <input type="text" name="username"><br>
+      <label>Password:</label><br>
+      <input type="password" name="password"><br><br>
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <!-- Contact / Location section -->
-    <section id="location">
-      <h2>Find Us</h2>
+  <section id="location">
+    <h2>Find Us</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d203.76400694823224!2d84.4364520635259!3d26.461240976919154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39930561d52714e7%3A0x8bb3a00ce00e1dbd!2sSHADAB%20HEART%20%26%20LUNG%20CARE%20CENTER!5e1!3m2!1sen!2sin!4v1747623723002!5m2!1sen!2sin"
+      width="100%"
+      height="320"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
 
-      <!-- Google Map -->
-      <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d203.76400694823224!2d84.4364520635259!3d26.461240976919154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39930561d52714e7%3A0x8bb3a00ce00e1dbd!2sSHADAB%20HEART%20%26%20LUNG%20CARE%20CENTER!5e1!3m2!1sen!2sin!4v1747623723002!5m2!1sen!2sin"
-        width="100%"
-        height="320"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </section>
+  <footer>
+    <p>&copy; 2025 SHADAB HEART & LUNG CARE CENTER</p>
+    <p id="visitor-counter">Visitor Count: Loading...</p>
+  </footer>
 
-
-    <footer>
-        <p>&copy; 2025 SHADAB HEART & LUNG CARE CENTER</p>
-    </footer>
-
-    <script>
-        function toggleTheme() {
-            if (document.body.style.getPropertyValue('--bg-color') === '#000') {
-                document.body.style.setProperty('--bg-color', '#fff');
-                document.body.style.setProperty('--text-color', '#000');
-            } else {
-                document.body.style.setProperty('--bg-color', '#000');
-                document.body.style.setProperty('--text-color', '#fff');
-            }
-        }
-    </script>
+  <script>
+    function toggleTheme() {
+      if (document.body.style.getPropertyValue('--bg-color') === '#000') {
+        document.body.style.setProperty('--bg-color', '#fff');
+        document.body.style.setProperty('--text-color', '#000');
+      } else {
+        document.body.style.setProperty('--bg-color', '#000');
+        document.body.style.setProperty('--text-color', '#fff');
+      }
+    }
+    fetch('https://api.countapi.xyz/hit/shadabclinic/visits')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('visitor-counter').textContent = 'Visitor Count: ' + data.value;
+      });
+  </script>
 </body>
 </html>
