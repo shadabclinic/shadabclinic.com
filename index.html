@@ -23,6 +23,28 @@
       color: white;
       padding: 1rem;
     }
+    h1 {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+    }
+    .clinic-name-primary {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+    .clinic-name-secondary {
+      font-size: 1.6rem;
+      font-weight: 500;
+      display: block;
+      margin-top: 0.2rem;
+      color: #e53935;
+    }
 
     .header-content {
       display: flex;
@@ -48,6 +70,15 @@
     @media (max-width: 600px) {
     .header-content {
       flex-direction: column;
+    }
+    @media (max-width: 600px) {
+      .clinic-name-primary {
+        font-size: 2.2rem;
+      }
+
+      .clinic-name-secondary {
+        font-size: 1.3rem;
+      }
     }
 
     .clinic-logo {
@@ -183,7 +214,10 @@
   <header class="header">
     <div class="header-content">
       <div class="clinic-info">
-        <h1>SHADAB HEART & LUNG CARE CENTER</h1>
+        <h1>
+          <span class="clinic-name-primary">SHADAB</span>
+          <span class="clinic-name-secondary">HEART & LUNG CARE CENTER</span>
+        </h1>
         <p>Thawe Road, Opposite Ghosh & Sinha Petrol Pump,</p>
         <p>Near Gopalganj Bus Stand, Gopalganj, Bihar - 841428</p>
       </div>
