@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-20SX7QVNWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-20SX7QVNWC');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SHADAB HEART & LUNG CARE CENTER</title>
@@ -331,6 +340,13 @@ Visit us for expert cardiac and respiratory care.</p>
   <footer>
     <p>&copy; 2025 SHADAB HEART & LUNG CARE CENTER</p>
     <p id="visitor-counter">Visitor Count: Loading...</p>
+    <script>
+      fetch('https://script.google.com/macros/s/XXXXXX/exec')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('visitor-counter').textContent = 'Visitor Count: ' + data;
+    });
+    </script>
   </footer>
 
   <script>
@@ -343,21 +359,6 @@ Visit us for expert cardiac and respiratory care.</p>
         document.body.style.setProperty('--text-color', '#fff');
       }
     }
-    // Visitor counter logic
-    async function updateVisitorCounter() {
-      const counterElement = document.getElementById('visitor-counter');
-      try {
-        const response = await fetch('https://api.countapi.xyz/hit/shadabclinic/visits');
-        if (!response.ok) throw new Error('Network response was not ok');
-        const data = await response.json();
-        counterElement.textContent = 'Visitor Count: ' + data.value;
-      } catch (error) {
-        counterElement.textContent = 'Visitor Count: Error';
-        console.error('Visitor counter error:', error);
-      }
-    }
-     // Call the function when page loads
-    updateVisitorCounter();
   </script>
 </body>
 </html>
