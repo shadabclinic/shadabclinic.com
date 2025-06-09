@@ -18,6 +18,46 @@
       padding: 1rem;
       text-align: center;
     }
+    .header {
+      background-color: #003366;
+      color: white;
+      padding: 1rem;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .clinic-logo {
+      height: 100px;
+      width: auto;
+      animation: heartbeat 2s infinite;
+    }
+
+    .clinic-info h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    @media (max-width: 600px) {
+    .header-content {
+      flex-direction: column;
+    }
+
+    .clinic-logo {
+      height: 80px;
+    }
+
+    .clinic-info h1 {
+      font-size: 1.4rem;
+    }
+    }
     nav {
       background-color: #006699;
       text-align: center;
@@ -140,14 +180,14 @@
     <button onclick="toggleTheme()">Toggle Theme</button>
   </div>
 
-  <header style="position: relative; background-color: #003366; color: white; padding: 1rem; text-align: center;">
-    <img src="images/logo.png" alt="Clinic Logo"
-         class="heartbeat-logo"
-         style="position: absolute; top: 20px; right: 100px; height: 120px; max-width: 140px;" />
-    <div>
-      <h1>SHADAB HEART & LUNG CARE CENTER</h1>
-      <p>Thawe Road, Opposite Ghosh & Sinha Petrol Pump,</p>
-      <p>Near Gopalganj Bus Stand, Gopalganj, Bihar - 841428</p>
+  <header class="header">
+    <div class="header-content">
+      <div class="clinic-info">
+        <h1>SHADAB HEART & LUNG CARE CENTER</h1>
+        <p>Thawe Road, Opposite Ghosh & Sinha Petrol Pump,</p>
+        <p>Near Gopalganj Bus Stand, Gopalganj, Bihar - 841428</p>
+      </div>
+      <img src="images/logo.png" alt="Clinic Logo" class="heartbeat-logo clinic-logo"/>
     </div>
   </header>
 
