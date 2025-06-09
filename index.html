@@ -341,11 +341,17 @@ Visit us for expert cardiac and respiratory care.</p>
     <p>&copy; 2025 SHADAB HEART & LUNG CARE CENTER</p>
     <p id="visitor-counter">Visitor Count: Loading...</p>
     <script>
-      fetch('https://script.google.com/macros/s/XXXXXX/exec')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('visitor-counter').textContent = 'Visitor Count: ' + data;
-    });
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxVT4wc6agYBqeGrWr6b7JjcyD3Vy7fSUINB-A9riuVHsBSr_IDUfYfiNQt1-DxLI3U/exec';
+
+      // First, log the visitor
+      fetch(`${scriptURL}?action=log`).then(() => {
+        // Then get the updated count
+        fetch(`${scriptURL}?action=get`)
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('visitor-counter').textContent = 'Visitor Count: ' + data;
+          });
+      });
     </script>
   </footer>
 
