@@ -220,6 +220,9 @@
     <button onclick="toggleTheme()">Toggle Theme</button>
   </div>
 
+  <!-- Google Translate container (hidden) -->
+  <div id="google_translate_element" style="display:none;"></div>
+
   <!-- Translation Buttons -->
   <div style="margin-top:10px;">
     <button onclick="translatePage('hi')">Translate into Hindi</button>
@@ -227,39 +230,29 @@
     <button onclick="resetToEnglish()">Back to English</button>
   </div>
 
-  <script>
-    // Save original content
-    let originalContent = document.body.innerHTML;
+  <script type="text/javascript">
+    // Initialize Google Translate
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
 
+    // Force translation with language code
     function translatePage(lang) {
-      let googleTranslateScript = document.createElement("script");
-      googleTranslateScript.type = "text/javascript";
-      googleTranslateScript.src =
-        "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-      document.body.appendChild(googleTranslateScript);
-
-      window.googleTranslateElementInit = function () {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "en",
-            includedLanguages: lang, // 'hi' for Hindi, 'ur' for Urdu
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          },
-          "google_translate_element"
-        );
-      };
-
-      if (!document.getElementById("google_translate_element")) {
-        let div = document.createElement("div");
-        div.id = "google_translate_element";
-        document.body.appendChild(div);
+      var select = document.querySelector("select.goog-te-combo");
+      if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+      } else {
+        alert("Google Translate not yet loaded. Please wait a moment and try again.");
       }
     }
-
-    function resetToEnglish() {
-      location.reload(); // reload restores original English text
-    }
   </script>
+
+  <!-- Google Translate Script (must load at the end) -->
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <header class="header">
     <div class="header-content">
